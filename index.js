@@ -9,10 +9,6 @@ const { RoleRouter } = require("./Routes/role.router.js");
 const { CarsRouter } = require("./Routes/cars.router.js");
 const { BrandsRouter } = require("./Routes/brands.router.js");
 const { CategoriesRouter } = require("./Routes/categories.router.js");
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
@@ -66,16 +62,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.json({ limit: "1mb" }));
-
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  res.setHeader("Access-Control-Allow-Credentials", true);
-
-  // Pass to next layer of middleware
-  next();
-});
-app.use(express.json({ limit: "1mb" }));
-
 app.use(UserRouter);
 app.use(initRouter);
 app.use(AuthRouter);
