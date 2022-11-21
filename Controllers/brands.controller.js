@@ -14,7 +14,9 @@ class BrandsController {
 
         if(name) {
             const brand = await BrandsModel.create(req.body)
-            return res.json({newId: brand.id})
+            return res.json({newId: brand.id,
+                name: brand.name                 
+            })
         } else {
             res.send(418)
         }

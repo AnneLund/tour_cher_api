@@ -8,6 +8,7 @@ BrandsModel.hasMany(CarsModel)
 
 CarsModel.belongsToMany(CategoriesModel, {through: 'junction'})
 CategoriesModel.belongsToMany(CarsModel, {through: 'junction'})
+BrandsModel.belongsToMany(CarsModel, {through: 'junction'})
 
 class CarsController {
     constructor() {
@@ -23,7 +24,12 @@ class CarsController {
                 through: {
                     attributes: []
                 }
-            }]
+            },
+            {
+                model: BrandsModel,
+                attributes: ['name'],
+            }],
+            
         })
         res.json(result)
     };
