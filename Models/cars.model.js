@@ -15,6 +15,12 @@ CarsModel.init({
         type: DataTypes.CHAR,
         allowNull: false,
     },
+
+    image: {
+    type: DataTypes.CHAR,
+    allowNull: true
+    },
+
     description: {
         type: DataTypes.CHAR,
         allowNull: false,
