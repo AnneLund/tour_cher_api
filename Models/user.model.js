@@ -30,7 +30,7 @@ role_id: {
     },
     {
         sequelize,
-        modelName: 'bruger',
+        modelName: 'user',
         freezeTableName: true,
         underscored: true,
         createdAt: true,

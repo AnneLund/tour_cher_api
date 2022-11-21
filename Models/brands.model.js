@@ -2,36 +2,22 @@ const {sequelize} = require('../Config/db.sequelize.js')
 const DataTypes = require('sequelize')
 const {Model} = require('sequelize')
 
-class ProductsModel extends Model {}
-
-ProductsModel.init({
+class BrandsModel extends Model {}
+BrandsModel.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    title: {
+    name: {
         type: DataTypes.CHAR,
         allowNull: false,
-    },
-    description: {
-        type: DataTypes.CHAR,
-        allowNull: true,
-    },
-    price: {
-    type:  DataTypes.INTEGER,
-    allowNull: false,   
-    },
-    category_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 2,
-    },
+    }
 },
 {
     sequelize,
-    modelName: 'products',
+    modelName: 'brands',
     freezeTableName: true,
     underscored: true,
     createdAt: false,
@@ -39,4 +25,4 @@ ProductsModel.init({
 }
 )
 
-module.exports = ProductsModel;
+module.exports = BrandsModel;

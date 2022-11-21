@@ -2,23 +2,23 @@ const {sequelize} = require('../Config/db.sequelize.js')
 const DataTypes = require('sequelize')
 const {Model} = require('sequelize')
 
-class CategoriesModel extends Model {}
+class ConditionsModel extends Model {}
 
-CategoriesModel.init({
+ConditionsModel.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    name: {
+    value: {
         type: DataTypes.CHAR,
         allowNull: false,
     },
 },
 {
     sequelize,
-    modelName: 'categories',
+    modelName: 'conditions',
     freezeTableName: true,
     underscored: true,
     createdAt: false,
@@ -26,4 +26,4 @@ CategoriesModel.init({
 }
 )
 
-module.exports = CategoriesModel;
+module.exports = ConditionsModel;

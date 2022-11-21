@@ -10,9 +10,9 @@ class CategoriesController {
         res.json(result)
     };
     create = async (req, res) => {
-        const {category} = req.body;
+        const {name} = req.body;
 
-        if(category) {
+        if(name) {
             const model = await CategoriesModel.create(req.body)
             return res.json({newId: model.id})
         } else {
